@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Store</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" rel="stylesheet" />
+
+</head>
+
+<body style="background-color: blueviolet;">
+
+  <div class="container mt-5">
+    <h1 class="text-center mb-4">متجر المنتجات</h1>
+
+    <!-- cards -->
+    <div class="row g-4">
+      <div class="col-md-3">
+        <div class="card">
+          <img src="./car.jpeg" class="card-img-top" alt="Product 1">
+          <div class="card-body text-center">
+            <h5 class="card-title">منتج 1</h5>
+            <p class="card-text">$100.00</p>
+            <button class="btn btn-primary w-100" onclick="addToCart(100, 'منتج 1')">شراء</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card">
+          <img src="./car.jpeg" class="card-img-top" alt="Product 2">
+          <div class="card-body text-center">
+            <h5 class="card-title">منتج 2</h5>
+            <p class="card-text">$220.00</p>
+            <button class="btn btn-primary w-100" onclick="addToCart(220, 'منتج 2')">شراء</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card">
+          <img src="./car.jpeg" class="card-img-top" alt="Product 3">
+          <div class="card-body text-center">
+            <h5 class="card-title">منتج 3</h5>
+            <p class="card-text">$150.00</p>
+            <button class="btn btn-primary w-100" onclick="addToCart(150, 'منتج 3')">شراء</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card">
+          <img src="./car.jpeg" class="card-img-top" alt="Product 4">
+          <div class="card-body text-center">
+            <h5 class="card-title">منتج 4</h5>
+            <p class="card-text">$250.00</p>
+            <button class="btn btn-primary w-100" onclick="addToCart(250, 'منتج 4')">شراء</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Basket -->
+   <div id="cart-sidebar" class="bg-light border p-3 rounded position-fixed end-0 top-0 mt-5 me-4 shadow"
+    style="width: 300px; display: none; z-index: 1050;">
+    <h5>سلة المشتريات</h5>
+    <div id="cart-items" class="mb-3"></div>
+    <p id="total" class="fw-bold">المجموع: $0.00</p>
+    <button class="btn btn-danger w-100 mb-3" onclick="clearCart()">إفراغ السلة</button>
+<!-- Coupon Entry Section -->
+    <div id="coupon-section" class="bg-info text-white p-3 rounded d-block">
+      <h6>أدخل كوبون الخصم</h6>
+      <input type="text" id="coupon-code" class="form-control mb-2 bg-white text-dark" placeholder="أدخل الكود" required>
+      <button type="submit" class="btn btn-success w-100" onclick="applyCoupon()">تطبيق الكوبون</button>
+      <p id="coupon-message" class="mt-2"></p>
+    </div>
+  </div>
+  
+  <!-- The button to open the basket -->
+  <button class="btn btn-primary position-fixed top-0 end-0 m-3" onclick="toggleCart()">
+    <i class="fas fa-shopping-cart fa-lg"></i>
+  </button>
+
+  <script src="js.js"></script>  
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
